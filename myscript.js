@@ -1,40 +1,47 @@
-
 var minimum = -getWidth()/2;
 var max =  getHeight()/2;
-
 
 
 function main()
 {
     //set up and move to starting position
     wrap(false);
-    var sideLength = getWidth()/20;
-    goto(-getWidth()/, minimum);
-    for (var i = 0; i < 10; i++)
-    {
-        brickBlock(sideLength)
-        strafe(sideLength)
-    }
-
-
+    
+    goto(-getWidth()/2, minimum);
 
     //get numver of bricks to draw from user
+    numSquares = prompt("number of bricks: ");
 
     //calculate the side length
-    
+    sideLength = getWidth()/numSquares;
+    brickBlock(50);
+    for (var i = 0; i < numSquares; i++)
+    {
+        brickBlock(sideLength);
+        strafe(sideLength);
+    }
+
+    //create green tubes
+    goto(0,0)
+    Greentube(50);
+
 }
 
-
-/*
-    *GREEN TUBE by Marco
-*/
-
-function greenTube(){
-
+function Greentube(sideLength){
+    strafe(sideLength / 2);
+    width(sideLength);
+    colour(78, 188, 0,1);
+    forward(sideLength);
+    penup();
+    left(180);
+    forward(sideLength);
+    left(180);
+    strafe(-sideLength/2);
+    width(2);
+    colour(0,0,0,1);
 }
 
 /*
-
     * BRICK BLOCK by Phil Bowman
     * The five functions below draw a square of bricks that can be tiled left to right
     * All of the five functions are necessary
