@@ -27,7 +27,50 @@ function main()
     right(90);
     forward(50);
     Greentube(50);
+
+
+    goto(0,0);
+    questionBlock();
     
+}
+
+//Draws a question block by Marie
+
+function questionBlock(sideLength){
+    questionBackground(sideLength);
+    questionMark(sideLength);
+}
+
+function questionBackground(){
+    strafe(sideLength / 2);
+    width(sideLength);
+    colour(255, 233, 0,1);
+    forward(sideLength);
+    penup();
+    left(180);
+    forward(sideLength);
+    left(180);
+    width(2);
+    colour(0,0,0,1);
+}
+
+//draws QuestionMark
+function questionMark()
+{
+    forward(sideLength/6);
+    pendown();
+    forward(sideLength/12);
+    penup();
+    forward(sideLength/14);
+    pendown();
+    forward(sideLength/12);
+    right(90);
+    for (var i = 0; i < 270; i++)
+    {
+        width(1);
+        forward(sideLength/300);
+        left(1);
+    }
 }
 
 /*
